@@ -1,0 +1,1 @@
+find includes src -regex ".*\.\(cpp\|hpp\)$" | xargs clang-format -i
