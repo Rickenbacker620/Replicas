@@ -12,9 +12,12 @@ add_custom_target(
 
 add_subdirectory(vendor/glad)
 
+add_subdirectory(lib)
 
 add_executable(LearnOpenGL src/main.cpp)
+
 target_link_libraries(LearnOpenGL
-    PRIVATE glad glfw)
+    PRIVATE
+    LGL)
 
 add_dependencies(LearnOpenGL format)
