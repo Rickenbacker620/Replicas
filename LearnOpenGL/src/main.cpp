@@ -35,8 +35,9 @@ int main()
     }
 
     init_glad();
+    std::string shaderRoot = "/home/shiro/Projects/Replicas/LearnOpenGL/shaders/";
 
-    auto s = new Shader("vs", "fs");
+    auto s = new Shader(shaderRoot + "vertexShader.glsl", shaderRoot + "fragmentShader.glsl");
 
     auto shaderProgram = s->getProgram();
 
@@ -55,15 +56,10 @@ int main()
 
     auto vao = new VAO();
     auto vbo = new VBO(vertices, sizeof(vertices));
-    auto ebo = new EBO(indices, sizeof(indices));
-
-    vao->bind();
-
-    vbo->bind();
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
-
     glEnableVertexAttribArray(0);
+    auto ebo = new EBO(indices, sizeof(indices));
 
     run_loop(window, [&]() {
         // render
