@@ -1,8 +1,8 @@
 IMAGE = mudos.img
 
-C_FLAGS := -Wall -m32 -fno-pie
-CFLAGS += -ffunction-sections -nostdlib -nostdinc -fno-builtin -ffreestanding
-QEMU_FLAGS := -daemonize -fda mudos.img
+C_FLAGS := -Wall -g -m32 -fno-pie
+CFLAGS += -ffunction-sections -nostdlib -nostdinc -fno-builtin -ffreestanding -fno-stack-protector -fno-asynchronous-unwind-tables
+QEMU_FLAGS := -fda mudos.img
 
 ifdef NONO
 QEMU_FLAGS += -daemonize
