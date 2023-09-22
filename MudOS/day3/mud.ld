@@ -10,5 +10,7 @@ SECTIONS {
 
     .mud 0xc200: AT(0x4200){
         mud.o(.text)
+        bootpack.o(.text)
+        func.o(.text)
     }
 }
