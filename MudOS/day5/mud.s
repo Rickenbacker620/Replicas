@@ -6,12 +6,12 @@
 .equ DSKCAC0, 0x00008000
 
 
-.equ CYLS, 0x00f0
-.equ LEDS, 0x00f1
-.equ VMODE, 0x00f2
-.equ SCRNX, 0x00f4
-.equ SCRNY, 0x00f6
-.equ VRAM, 0x00f8
+.equ CYLS, 0xf0
+.equ LEDS, 0x0ff1
+.equ VMODE, 0x0ff2
+.equ SCRNX, 0x0ff4
+.equ SCRNY, 0x0ff6
+.equ VRAM, 0x0ff8
 
 mudstart:
     mov $0x13, %al
